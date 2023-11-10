@@ -12,5 +12,9 @@
       ansible.builtin.debug:
         msg: Devops from the {{URL}}
       vars:
-        URL: cloudkid
+      URL: cloudkid
+    
+    - name: printing HAI from task1 of play1
+      ansible.builtin.debug:
+        msg: value of {{URL}}
 
