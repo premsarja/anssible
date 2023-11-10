@@ -3,6 +3,9 @@
   hosts: all
   vars: 
     URL: play.google.com
+  vars_files: 
+    - "{{ENV}}.yml"
+
   tasks:
     - name: printing HAI from task1 of play1
       ansible.builtin.debug:
@@ -18,3 +21,6 @@
       ansible.builtin.debug:
         msg: value of {{URL}}
 
+    - name: printing the env specific
+      ansible.builtin.debug
+        msg: type of instance is {{INS_TYPE}}
