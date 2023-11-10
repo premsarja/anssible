@@ -1,8 +1,5 @@
+[prod]
 172.31.35.152
 172.31.44.116
 172.31.35.109
 
-[all:vars]
-ansible_connection=ssh
-ansible_user=centos
-ansible_ssh_pass=DevOps321
