@@ -1,6 +1,6 @@
 ---
 - name: demo on vars
-  hosts: prod
+  hosts: all
   vars: 
     URL: play.google.com
   tasks:
@@ -13,4 +13,4 @@
         msg: Devops from the {{URL}}
       vars:
         URL: MACCHA
-          
+
