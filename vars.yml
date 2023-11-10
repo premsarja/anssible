@@ -12,5 +12,5 @@
       ansible.builtin.debug:
         msg: Devops from the {{URL}}
       vars:
-        URL: MACCHA
+        URL: cloudkid
 
