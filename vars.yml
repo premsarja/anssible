@@ -14,7 +14,7 @@
       vars:
        URL: cloudkid
     
-    - name: printing HAI from task1 of play1
+    - name: printing HAI from task1 of play3
       ansible.builtin.debug:
         msg: value of {{URL}}
 
