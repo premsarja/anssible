@@ -15,7 +15,7 @@
       ansible.builtin.debug:
         msg: Devops from the {{URL}}
       vars:
-       URL: cloudkid
+        URL: cloudkid
     
     - name: printing HAI from task1 of play3
       ansible.builtin.debug:
@@ -23,4 +23,4 @@
 
     - name: printing the env specific
       ansible.builtin.debug
-        msg: type of instance is {{INS_TYPE}}
+       msg: type of instance is {{INS_TYPE}}
