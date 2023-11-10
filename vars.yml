@@ -11,3 +11,6 @@
     - name: printing HAI from task2 of play1
       ansible.builtin.debug:
         msg: Devops from the {{URL}}
+      vars:
+        URL: MACCHA
+          
