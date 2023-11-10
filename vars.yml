@@ -22,5 +22,5 @@
         msg: value of {{URL}}
 
     - name: printing the env specific
-      ansible.builtin.debug
+      ansible.builtin.debug:
        msg: type of instance is {{INS_TYPE}}
