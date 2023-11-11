@@ -1,0 +1,23 @@
+- name: demo on using tags
+  hosts: all
+  tasks: 
+    - name: this is frontend
+      debug:
+        msg: installing frontend
+      tags: frontend  
+    
+    - name: starting frontend
+      debug:
+        msg: starting frontend
+      tags: frontend
+
+    - name: installing backend
+      debug:
+        msg: installing backend
+      tags: backend
+
+    - name: starting backend
+      debug:
+        msg: starting backend
+      tags: backend    
+  
