@@ -2,11 +2,11 @@
   hosts: all
   tasks: 
      - name: runs only if distribution is centos
-       ansible.buildin.debug:
+       ansible.builtin.debug:
          msg: welcome to centos {{ansible_distribution}}
        when: ansible_distribution == "centos"  
 
      - name: runs only if distribution is REDHAT
-       ansible.buildin.debug:
+       ansible.builtin.debug:
         msg: welcome to centos {{ansible_distribution}}
        when: ansible_distribution == "REDHAT"    
