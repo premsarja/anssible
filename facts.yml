@@ -3,4 +3,4 @@
   tasks: 
     - name: printing the default variable
       ansible.builtin.debug:
-        msg: server flavour is "{{ansible_distribution}}"
+        msg: server flavour is "{{ansible_distribution_file_variety}}"
