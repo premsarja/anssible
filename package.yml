@@ -1,5 +1,5 @@
 - name: nginx
-  hosts: all
+  hosts: prod
   become: yes
   tasks:
     - name: nginx
