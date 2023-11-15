@@ -1,5 +1,5 @@
 - name: copying file
-  hosts: all
+  hosts: prod
   become: yes
   tasks:
      - name: copying the file
