@@ -8,7 +8,7 @@
         msg: "Welcome to CentOS {{ansible_distribution}}"
       when: ansible_distribution == "CentOS"
 
-    - name: runs only if distribution is REDHAT
+    - name: runs only if distribution is "RedHat"
       ansible.builtin.debug:
         msg: "Welcome to Red Hat {{ansible_distribution}}"
       when: ansible_distribution == "RedHat
