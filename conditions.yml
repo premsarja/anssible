@@ -11,4 +11,9 @@
     - name: runs only if distribution is REDHAT
       ansible.builtin.debug:
         msg: "Welcome to Red Hat {{ansible_distribution}}"
-      when: ansible_distribution == "RedHat"
+      when: ansible_distribution == "RedHat
+
+    - name: run this action 
+      ansible.builtin.debug:
+        msg: action is true
+      when: action   
