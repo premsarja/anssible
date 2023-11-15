@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   tasks:
-     - name:copying the file
+     - name: copying the file
        ansible.builtin.copy:
          src: qa.yml
          dest: /home/centos/qa.yml
