@@ -1,5 +1,5 @@
 - name: copying file
-  hosta: pre-prod
+  hosts: all
   become: yes
   tasks:
      - name:copying the file
