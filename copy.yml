@@ -1,0 +1,8 @@
+- name: copying file
+  hosta: pre-prod
+  become: yes
+  tasks:
+     - name:copying the file
+       ansible.builtin.copy:
+         src: qa.yml
+         dest: /home/centos/qa.yml
