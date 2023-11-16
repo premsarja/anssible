@@ -1,5 +1,5 @@
 - name: playbook to roboshop
   become: yes
-  hosts: "{{XOMPONENT}}" 
+  hosts: "{{COMPONENT}}" 
   roles:
     - "{{COMPONENT}}"
