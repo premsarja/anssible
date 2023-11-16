@@ -1,4 +1,4 @@
-- name: playbook to roboshop "https://github.com/stans-robot-project/frontend/archive/main.zip"
+- name: playbook to roboshop
   become: yes
   hosts: frontend 
   roles:
