@@ -11,3 +11,9 @@
     name: RoboShop  # Specify the desired username without a list structure
     password: RoboShop # Replace with the desired password
     state: present  # Indicates that the user should exist (it will be created if it doesn't exist)
+
+- name: Run a command as another user
+  become_user: RoboShop  # Replace with the user you want to become
+  tasks:  
+    - name: Run a command as another user
+      ansible.builtin.shell: whoami  # Replace with the command you want to run
