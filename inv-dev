@@ -2,7 +2,7 @@
 frontend-dev.roboshop-internal
 
 [mongodb]
-172.31.35.152
+mongodb-dev.roboshop-internal
 
 [catalogue]
 172.31.35.109
