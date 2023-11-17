@@ -8,6 +8,6 @@
 
 - name: Add a new user
   ansible.builtin.user:
-      -  name: RoboShop  # Replace 'your_username' with the desired username
-         password: RoboShop@123  # Replace 'your_password' with the desired password (use 'password' for hashed password)
-         state: present  # Indicates that the user should exist (it will be created if it doesn't exist)
+      - name: RoboShop  # Replace 'your_username' with the desired username
+        password: RoboShop@123  # Replace 'your_password' with the desired password (use 'password' for hashed password)
+        state: present  # Indicates that the user should exist (it will be created if it doesn't exist)
