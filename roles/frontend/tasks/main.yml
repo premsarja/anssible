@@ -1,4 +1,9 @@
+
+  
+
 - name: install nginx
+  vars:
+   ENV: "dev"  # Define ENV variable here or provide it through other means like inventory, group_vars, etc.
   ansible.builtin.package:
      name: nginx
      state: present
@@ -37,4 +42,4 @@
     state: reloaded   
 
 - name: configuring service name
-  ansible.builtin.shell: set-hostname "{{COMPONENT}}"-{{ENV}}   
+  ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}   
