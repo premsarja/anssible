@@ -12,11 +12,10 @@
     password: RoboShop # Replace with the desired password
     state: present  # Indicates that the user should exist (it will be created if it doesn't exist)
 
-- name: User-specific tasks
-  hosts: localhost  # Assuming this playbook runs on the local machine
+- name: Userspecific tasks
+  hosts: catalogue  # Assuming this playbook runs on the local machine
   become: true  # Enable privilege escalation
   become_user: RoboShop  # Replace with the user you want to become
-
   tasks:
     - name: Run a command as another user
       ansible.builtin.command: whoami  # Use the 'command' module to execute commands
