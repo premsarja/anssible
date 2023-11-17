@@ -1,9 +1,9 @@
 - name: Configuring Node.js Repository
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
 
-- name: installing Node.js
+- name: installing nodejs
   amsible.builtin.package:
-    - name: node.js 
+    - name: nodejs 
       state: present
 
 - name: Add a new user
