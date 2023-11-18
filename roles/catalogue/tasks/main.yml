@@ -18,7 +18,7 @@
     dest: /tmp
     remote_src: yes
 
-- name: performing {{COMPONENT}}-cleanup
+- name: performing {{COMPONENT}}cleanup
   ansible.builtin.file:
     path: /home/{APPUSER}/{COMPONENT}
     state: absent
