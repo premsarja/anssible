@@ -37,6 +37,6 @@
     state: reloaded   
 
 - name: configuring service name
-  ansible.builtin.shell: set-hostname "{{COMPONENT}}-{{ENV}}""
+  ansible.builtin.shell: set-hostname "{{COMPONENT}}-{{ENV}}"
 
   

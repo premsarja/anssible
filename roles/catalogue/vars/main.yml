@@ -1,1 +1,3 @@
+    APPUSER: RoboShop  # Specify the desired username without a list structure
+    PASSWORD: RoboShop # Replace with the desired password
 

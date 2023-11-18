@@ -8,16 +8,19 @@
 
 - name: Add a new user
   ansible.builtin.user:
-    name: RoboShop  # Specify the desired username without a list structure
-    password: RoboShop # Replace with the desired password
+    name: {{APPUSER}}  # Specify the desired username without a list structure
+    password: {{PASSWORD}} # Replace with the desired password
     state: present  # Indicates that the user should exist (it will be created if it doesn't exist)
 
-- name: Userspecific tasks
-  hosts: catalogue  # Assuming this playbook runs on the local machine
-  become: true  # Enable privilege escalation
-  become_user: RoboShop  # Replace with the user you want to become
-  tasks:
-    - name: Run a command as another user
-      ansible.builtin.command: whoami  # Use the 'command' module to execute commands
+- name: download link
+  ansible.builtin.unarchive:
+    src: https://github.com/stans-robot-project/catalogue-main/archive/main.zip
+    dest: /tmp
+    remote_src: yes
 
-    # Add more tasks here to be executed as the 'RoboShop' user
+- name: performing {{COMPONENT}}-cleanup
+  ansible.builtin.file:
+    path: /home/{{APPUSER}}/{{COMPONENT}}
+    state: absent
+  ignore_errors: yes
+  
