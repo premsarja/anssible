@@ -14,7 +14,7 @@
     
 - name: download link
   ansible.builtin.unarchive:
-    src: https://github.com/stans-robot-project/catalogue-main/archive/main.zip
+    src: https://github.com/stans-robot-project/catalogue/archive/main.zip
     dest: /tmp
     remote_src: yes
 
