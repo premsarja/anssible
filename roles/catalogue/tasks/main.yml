@@ -8,8 +8,8 @@
 
 - name: Add a new user
   ansible.builtin.user:
-    name: {{APPUSER}}  # Specify the desired username without a list structure
-    password: {{PASSWORD}} # Replace with the desired password
+    name: {APPUSER}  # Specify the desired username without a list structure
+    password: {PASSWORD} # Replace with the desired password
     state: present  # Indicates that the user should exist (it will be created if it doesn't exist)
 
 - name: download link
