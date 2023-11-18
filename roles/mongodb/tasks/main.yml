@@ -38,16 +38,16 @@
   ansible.builtin.set_fact:
     users_js_content: "{{ lookup('file', '/tmp/mongodb-main/users.js') }}"
 
--  name: Insert document only if it doesn't exist
-   community.mongodb.mongodb_collection:
+- name: Insert document only if it doesn't exist
+  community.mongodb.mongodb_collection:
     database: mydb
     collection: users
     operation: insert
-    document: "{{ users_js_content }}"
+    document: '{{ users_js_content }}'
     write_concern: majority
-   register: insert_result
-   ignore_errors: yes
-   when: insert_result.rc != 11000  # 11000 indicates duplicate key error
+  register: insert_result
+  ignore_errors: yes
+  when: insert_result.rc != 11000  # 11000 indicates duplicate key error
 
 - name: printing HAI from task1 of play1
   ansible.builtin.debug:
