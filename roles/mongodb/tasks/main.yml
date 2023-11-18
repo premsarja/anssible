@@ -34,12 +34,16 @@
 #     - users
 #     - catalogue
 
+- name: Read users.js content
+  ansible.builtin.set_fact:
+    users_js_content: "{{ lookup('file', '/tmp/mongodb-main/users.js') }}"
+
 - name: Insert document only if it doesn't exist
   community.mongodb.mongodb_collection:
     database: mydb
     collection: users
     operation: insert
-    document: "{{ users.js }}"
+    document: "{{ users_js_content }}"
     write_concern: majority
   register: insert_result
   ignore_errors: yes
