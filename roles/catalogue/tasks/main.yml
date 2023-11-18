@@ -6,11 +6,12 @@
     name: nodejs  # Removed the list structure around 'name'
     state: present
 
-- name: Add a new user
+- name: Add a new user if not already existing
   ansible.builtin.user:
-    name: {APPUSER}  # Specify the desired username without a list structure
+    name: "{{ APPUSER }}"
     comment: roboshop app user
-
+    state: present
+    
 - name: download link
   ansible.builtin.unarchive:
     src: https://github.com/stans-robot-project/catalogue-main/archive/main.zip
