@@ -22,12 +22,10 @@
     dest: /tmp
     remote_src: yes
   
-- name: Rename file using file module
-  ansible.builtin.file:
-    src: /home/{{ APPUSER }}/catalogue-main
-    dest: /home/{{ APPUSER }}/catalogue
-    state: file
-    
+- name: Rename file using mv command
+  ansible.builtin.command:
+    cmd: mv /tmp/catalogue-main /home/roboshop/catalogue
+
 - name: performing {{COMPONENT}} cleanup
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}
