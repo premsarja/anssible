@@ -26,7 +26,7 @@
   ansible.builtin.file:
     src: /home/{{ APPUSER }}/catalogue-main
     dest: /home/{{ APPUSER }}/catalogue
-    state: renamed
+    state: file
     
 - name: performing {{COMPONENT}} cleanup
   ansible.builtin.file:
