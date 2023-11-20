@@ -15,7 +15,7 @@
 - name: Printing the variable 
   ansible.builtin.debug:
     msg: Value of the OUT is {{USERINFO}}    
-     
+
 - name: download link
   ansible.builtin.unarchive:
     src: https://github.com/stans-robot-project/catalogue/archive/main.zip
@@ -43,11 +43,11 @@
 - name: copying the systemd file
   ansible.builtin.template:
     src: systemd.service
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+    dest: /etc/systemd/system/catalogue.service
 
-- name: start {{COMPONENT}}
+- name: start catalogue.service
   systemd:
-        name: "{{COMPONENT}}"
+        name: catalogue.service
         state: restarted
         enabled: yes
         daemon_reload: yes
