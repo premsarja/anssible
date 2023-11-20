@@ -22,11 +22,17 @@
     dest: /tmp
     remote_src: yes
 
+- name: Rename a file using mv command
+  ansible.builtin.command:
+   cmd: mv /home/{{APPUSER}}/{{COMPONENT}}-main /home/{{APPUSER}}/{{COMPONENT}}
+
 - name: performing {{COMPONENT}} cleanup
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}
     state: absent
   ignore_errors: yes
+
+
   
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
