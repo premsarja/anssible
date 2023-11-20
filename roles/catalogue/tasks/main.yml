@@ -21,11 +21,6 @@
     src: https://github.com/stans-robot-project/catalogue/archive/main.zip
     dest: /tmp
     remote_src: yes
-
-- name: Rename a file using file module
-  hosts: catalogue-dev.roboshop-internal
-  become: yes  # Enable privilege escalation if required
-
   
 - name: Rename file using file module
   ansible.builtin.file:
