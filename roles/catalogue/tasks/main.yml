@@ -31,7 +31,7 @@
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
     src: /tmp/{{COMPONENT}}-main
-    dest: /home/{{APPUSER}}/{{COMPONENT}}
+    dest: /home/{{APPUSER}}/
     owner: "{{APPUSER}}"
     group: "{{APPUSER}}"
     remote_src: yes
