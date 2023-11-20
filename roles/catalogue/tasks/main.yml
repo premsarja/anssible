@@ -6,12 +6,16 @@
     name: nodejs  # Removed the list structure around 'name'
     state: present
 
-- name: Add a new user if not already existing
+- name: Creating {{APPUSER}}
   ansible.builtin.user:
-    name: "{{ APPUSER }}"
-    comment: roboshop app user
-    state: present
-    
+    name: "{{APPUSER}}"
+    comment: roboshop app user 
+  register: USERINFO 
+
+- name: Printing the variable 
+  ansible.builtin.debug:
+    msg: Value of the OUT is {{USERINFO}}    
+     
 - name: download link
   ansible.builtin.unarchive:
     src: https://github.com/stans-robot-project/catalogue/archive/main.zip
