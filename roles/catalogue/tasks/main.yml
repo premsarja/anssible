@@ -23,10 +23,15 @@
     remote_src: yes
 
 - name: Rename a file using file module
+  hosts: catalogue-dev.roboshop-internal
+  become: yes  # Enable privilege escalation if required
+
+  
+- name: Rename file using file module
   ansible.builtin.file:
-    src: /tmp
-    dest: /home/{{APPUSER}}/{{COMPONENT}}
-    state: rename
+    src: /home/{{ APPUSER }}/catalogue-main
+    dest: /home/{{ APPUSER }}/catalogue
+    state: renamed
     
 - name: performing {{COMPONENT}} cleanup
   ansible.builtin.file:
