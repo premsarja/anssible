@@ -27,7 +27,6 @@
   ansible.builtin.file:
     path: /home/{{APPUSER}}/{{COMPONENT}}
     state: absent
-  ignore_errors: yes
 
 - name: copying the file to {{APPUSER}} home directory
   ansible.builtin.copy:
