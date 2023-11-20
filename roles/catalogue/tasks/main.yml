@@ -38,7 +38,7 @@
 
 - name: genearting artifacts
   community.general.npm:
-    path: /home/{{APPUSER}}/{{COMPONENT}}
+    path: /home/{{APPUSER}}/{{COMPONENT}}/{{COMPONENT}}-main
 
 - name: copying the systemd file
   ansible.builtin.template:
