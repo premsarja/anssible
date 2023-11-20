@@ -28,7 +28,7 @@
 
 - name: Move file from /tmp to /home/roboshop (force overwrite)
   ansible.builtin.command:
-      cmd: mv /tmp/catalogue /home/roboshop/
+      cmd: mv /catalogue /home/roboshop/
     
 
 - name: performing {{COMPONENT}} cleanup
