@@ -3,3 +3,19 @@
     src: redis.repo
     dest: /etc/yum.repos.d/redis.repo
 
+- name: installing {{COMPONENT}}
+  ansible.builtin.package:
+    name: redis-6.2.13 
+    state: present
+
+- name: configuring the {{COMPONENT}} visiblity
+  ansible.builtin.replace:
+    path: /etc/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0' 
+
+- name: starting {{COMPONENT}}
+  systemd:
+    name: redis
+    state: restarted
+    enabled: yes
