@@ -26,13 +26,15 @@
     dest: /tmp
     remote_src: yes
 
-- name: injecting mongodb schema
+- name: Inject MongoDB schema for users
   community.mongodb.mongodb_shell:
-    file: "/tmp/mongodb-main/{{item}}.js"
+    file: "/tmp/mongodb-main/users.js"
     idempotent: yes
-  loop:
-    - users
-    - catalogue
+
+- name: Inject MongoDB schema for catalogue
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes
 
 - name: configuring service name
   ansible.builtin.shell: set-hostname "{{COMPONENT}}-{{ENV}}"
