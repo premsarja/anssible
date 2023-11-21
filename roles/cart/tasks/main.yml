@@ -36,22 +36,22 @@
     group: "{{APPUSER}}"
     remote_src: yes
 
-# - name: genearting artifacts
-#   community.general.npm:
-#     path: /home/{{APPUSER}}/{{COMPONENT}}/
+- name: genearting artifacts
+  community.general.npm:
+    path: /home/{{APPUSER}}/{{COMPONENT}}/
 
-# - name: copying the systemd file
-#   ansible.builtin.template:
-#     src: systemd.service
-#     dest: /etc/systemd/system/{{COMPONENT}}.service
+- name: copying the systemd file
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
 
-# - name: starting {{COMPONENT}}
-#   systemd:
-#     name: "{{COMPONENT}}.service"
-#     state: restarted
-#     enabled: yes
-#     daemon_reload: yes
+- name: starting {{COMPONENT}}
+  systemd:
+    name: "{{COMPONENT}}.service"
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
 
-# - name: configuring service name
-#   ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
+- name: configuring service name
+  ansible.builtin.shell: set-hostname {{COMPONENT}}-{{ENV}}
 
