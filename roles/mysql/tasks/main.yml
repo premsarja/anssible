@@ -1,0 +1,25 @@
+- name: copying the ((COMPONENT)) repo
+  ansible.builtin.copy:
+    src: ((COMPONENT)).repo
+    dest: /etc/yum.repos.d/((COMPONENT)).repo
+
+- name: installing {{COMPONENT}}
+  ansible.builtin.package:
+    name: mysql-community-server
+    state: present
+
+- name: starting {{COMPONENT}}
+  systemd:
+    name: mysqld
+    state: restarted
+    enabled: yes
+
+- name: fetch log from remote nodejs
+  ansible.builtin.slurp:
+    src: /var/log/mysqld.log
+  register: pwd_log
+
+
+
+
+
