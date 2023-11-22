@@ -34,6 +34,13 @@
     update_password: always
     check_implicit_admin: yes
 
+- name: Install PyMySQL
+  ansible.builtin.pip:
+    name: pymysql
+    state: present
+    executable: /usr/bin/python3  # Specify the Python interpreter path if needed
+
+
 - name: Remove {{ COMPONENT }} password validate plugin
   ansible.builtin.mysql_db:
     name: "mysql"
