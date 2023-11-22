@@ -36,9 +36,6 @@
     file: "/tmp/mongodb-main/catalogue.js"
     idempotent: yes
 
-
-
-
 # - name: injecting mongodb schema       # for loop also we can use
 #   community.mongodb.mongodb_shell:
 #     file: "/tmp/mongodb-main/{{item}}.js"
