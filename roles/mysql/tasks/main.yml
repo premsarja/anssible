@@ -27,7 +27,7 @@
   ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ROOT_PASSWORD}}';" | mysql  --connect-expired-password -uroot -p "{{DEFAULT_PASSWORD}}"
 
 - name: removing {{COMPONENT}} password validate plugin
-  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -p{{ROOT_PASSWORD}} 
+  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -pRoboShop@1 
 
 - name: download and extracting {{COMPONENT}}
   ansible.builtin.unarchive:
