@@ -14,13 +14,6 @@
     state: restarted
     enabled: yes
 
-- name: Install PyMySQL
-  ansible.builtin.pip:
-    name: pymysql
-    state: present
-    executable: /usr/bin/python3  # Replace with your Python interpreter path
-
-
 - name: fetch log from remote nodejs
   ansible.builtin.slurp:
     src: /var/log/mysqld.log
