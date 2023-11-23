@@ -9,8 +9,7 @@
     name: rabbitmq-server 
     state: present
 
-
-- name: creating {{APPUSER}} USER ON {{COMPONENT}}
+- name: "creating {{APPUSER}} USER ON {{COMPONENT}}"
   community.rabbitmq.rabbitmq_user:
     user: "{{APPUSER}}"
     password: roboshop@123
