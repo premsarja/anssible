@@ -15,7 +15,7 @@
     tasks_from: download_and_extractlink
 
 - name: generating artifacts
-  community.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
+  ansible.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
   args:
     chdir: /home/{{APPUSER}}/{{COMPONENT}}/
 
