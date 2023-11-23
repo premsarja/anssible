@@ -18,7 +18,13 @@
   community.builtin.shell: mvn clean package && mv target/{{COMPONENT}}-1.0.jar {{COMPONENT}}.jar
   args:
     chdir: /home/{{APPUSER}}/{{COMPONENT}}/
+
 - name: configuring config and naming 
   ansible.builtin.include_role:
     name: common 
     tasks_from: config_service
+
+- name: configuring name-update
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: name-update
