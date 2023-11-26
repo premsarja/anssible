@@ -1,4 +1,4 @@
-- name: reloaded nginx
+- name: starting nginx
   ansible.builtin.systemd:
     name: nginx.service
     state: reloaded   
