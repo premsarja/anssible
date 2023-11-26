@@ -45,7 +45,7 @@
 #     - catalogue
 #vfmvkfv
 
-- name: configuring {{COMPONENT}} name
-  ansible.builtin.include_role:
-    name: common 
-    tasks_from: name-update
+# - name: configuring {{COMPONENT}} name
+#   ansible.builtin.include_role:
+#     name: common 
+#     tasks_from: name-update
