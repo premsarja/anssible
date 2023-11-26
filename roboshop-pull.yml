@@ -1,0 +1,5 @@
+- name: playbook to roboshop
+  become: yes
+  hosts: localhost 
+  roles:
+    - "{{COMPONENT}}"
