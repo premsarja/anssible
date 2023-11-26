@@ -31,6 +31,11 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
   notify: reloaded nginx
+  
+- name: reloaded nginx
+  ansible.builtin.systemd:
+    name: nginx.service
+    state: reloaded   
 
 - name: configuring {{COMPONENT}} name
   ansible.builtin.include_role:
