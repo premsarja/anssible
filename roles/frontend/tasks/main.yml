@@ -30,7 +30,8 @@
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-      
+  notify: reloaded nginx
+
 - name: reloaded nginx
   ansible.builtin.systemd:
     name: nginx.service
