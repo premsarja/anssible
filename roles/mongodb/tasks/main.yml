@@ -43,6 +43,7 @@
 #   loop:
 #     - users
 #     - catalogue
+#vfmvkfv
 
 - name: configuring {{COMPONENT}} name
   ansible.builtin.include_role:
