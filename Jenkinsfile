@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     environment{
         PASSWORD =credentials('PASSWORD')
     }
