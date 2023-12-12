@@ -13,7 +13,7 @@ pipeline {
             steps{
                 sh '''
                 
-                /home/ec2-user/.local/bin/ansible-playbook robo-dryrun.yml
+                /home/ec2-user/.local/bin/ ansibplaybookle- robo-dryrun.yml
                 
                 '''
             }
