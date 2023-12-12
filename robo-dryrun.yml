@@ -7,7 +7,7 @@
     instance_type: "t3.micro"
     security_group_id: "sg-07e12b653e8d7a67a"  # Update as per your security group id
     image: "ami-0230bd60aa48260c6"             # Update this with the AMI ID in your account which has ansible installed.
-    region: "us-east-1d"
+    region: "us-east-1a"
   tasks: 
     - name: Launching instance
       amazon.aws.ec2:
