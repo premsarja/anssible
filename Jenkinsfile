@@ -13,7 +13,7 @@ pipeline {
             steps{
                 sh '''
                 
-                ansible-playbook robo-dryrun.ymll
+                ansible-playbook robo-dryrun.yml
                 
                 '''
             }
