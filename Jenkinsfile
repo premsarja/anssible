@@ -13,7 +13,7 @@ pipeline {
             steps{
                 sh '''
                 
-                ansible-playbook robo-dryrun.yml -e ENV=${dev} -e COMPONENT=${COMPONENT} -e ansible_user=${PASS_USR} -e ansible_password=${PASS_PWD}
+                ansible-playbook robo-dryrun.ymll -e ENV=${dev} -e COMPONENT=${COMPONENT} -e ansible_user=${PASS_USR} -e ansible_password=${PASS_PWD}
                 
                 '''
             }
