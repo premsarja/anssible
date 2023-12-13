@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh '''
                 env
-                /bin/ansible-playbook ~/anssible/robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW} 
+                ansible-playbook ~/anssible/robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW} 
                 '''
             }
 
