@@ -10,7 +10,7 @@
     region: "us-east-1"
   tasks:
     - name: Launching instance
-      amazon.aws.ec2:
+      community.aws.ec2_instance:
          count: 1
          group_id: "{{ security_group_id }}"
          instance_type: "{{ instance_type }}"
