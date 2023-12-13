@@ -10,7 +10,7 @@
     ec2_tags:
       Name: "MyEC2Instance"                   # Customize your EC2 instance name tag
   tasks:
-      name: Launching EC2 instance
+    - name: Launching EC2 instance
       ec2:
         aws_access_key: "{{ access_key }}"    # Update with your AWS access key
         aws_secret_key: "{{ secret_key }}"    # Update with your AWS secret key
@@ -18,11 +18,11 @@
         image: "{{ image }}"
         instance_type: "{{ instance_type }}"
         security_groups: "{{ security_group_id }}"
-        subnet_id: "{{ subnet_id }}"
+        subnet_id: "{{ subnet_id }}"  # Update with your subnet ID
         instance_tags: "{{ ec2_tags }}"
         wait: yes
       register: ec2_instance
 
-      name: Display EC2 instance information
+    - name: Display EC2 instance information
       debug:
         var: ec2_instance.instances[0].public_ip  # Display the public IP of the launched instance
