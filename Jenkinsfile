@@ -13,8 +13,8 @@ pipeline {
         stage('performing dryrun') {
             steps{
                 sh '''
-                env
-                /var/lib/jenkins/workspace/promote-multibranchpipeline_main/ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user= -e ansible_password=                '''
+                ansible-playbook robo-dryrun.yml
+                '''
             }
 
         }
