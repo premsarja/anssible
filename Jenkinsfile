@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh '''
                 env
-                 sudo /home/ec2-user/.local/bin/ansible/ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user= -e ansible_password=                '''
+                ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user= -e ansible_password=                '''
             }
 
         }
