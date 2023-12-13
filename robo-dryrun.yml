@@ -15,9 +15,10 @@
         instance_type: "{{ instance_type }}"
         image_id: "{{ image }}"
         region: "{{ region }}"
-        group: "{{ security_group_id }}"
+        security_group: "{{ security_group_id }}"
+        instance_tags:
+          Name: "{{ ec2_tags.Name }}"
         wait: yes
-        instance_tags: "{{ ec2_tags }}"
       register: ec2_instance
 
     - name: Display EC2 instance information
