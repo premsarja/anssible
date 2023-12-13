@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         SSHCRED =credentials('SSHCRED')
-        PATH = "/home/ec2-user/.local/bin/ansible" // Add Ansible path
+        // PATH = "/home/ec2-user/.local/bin/ansible" // Add Ansible path
     }
     parameters{        
         string(name: 'COMPONENT', defaultValue: 'mongodb', description: 'who should i say hello co' )
@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh '''
                 env
-                PATH/ansible-playbook robo-dryrun.yml  -e ENV=dev -e COMPONENT=mongodb -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW} 
+                ansible-playbook robo-dryrun.yml  -e ENV=dev -e COMPONENT=mongodb -e ansible_user=${SSH_CRED_USR} -e ansible_password=${SSH_CRED_PSW} 
                 '''
             }
 
