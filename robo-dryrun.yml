@@ -9,7 +9,7 @@
     image: "ami-0d3eb821da112abf4"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1"
   tasks:
-    - name: Launching instance
+      name: Launching instance
       amazon.aws.ec2:
          count: 1
          group_id: "{{ security_group_id }}"
