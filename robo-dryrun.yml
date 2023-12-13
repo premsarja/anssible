@@ -23,6 +23,6 @@
         wait: yes
       register: ec2_instance
 
-    - name: Display EC2 instance information
+      name: Display EC2 instance information
       debug:
         var: ec2_instance.instances[0].public_ip  # Display the public IP of the launched instance
