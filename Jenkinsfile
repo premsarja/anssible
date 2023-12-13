@@ -14,7 +14,7 @@ pipeline {
             steps{
                 sh '''
                 env
-                /home/ec2-user/.local/bin/ansible/ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user= -e ansible_password=                '''
+                /var/lib/jenkins/workspace/promote-multibranchpipeline_main/ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=mongodb -e ansible_user= -e ansible_password=                '''
             }
 
         }
