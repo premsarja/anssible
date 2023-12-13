@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        PASSWORD =credentials('PASSWORD')
+        SSHCRED =credentials('SSHCRED')
     }
     parameters{        
         string(name: 'COMPONENT', defaultValue: 'mongodb', description: 'who should i say hello co' )
