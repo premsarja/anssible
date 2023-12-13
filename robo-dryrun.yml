@@ -10,7 +10,7 @@
     ec2_tags:
       Name: "MyEC2Instance"                   # Customize your EC2 instance name tag
   tasks:
-    - name: Launching EC2 instance
+      name: Launching EC2 instance
       ec2:
         aws_access_key: "{{ access_key }}"    # Update with your AWS access key
         aws_secret_key: "{{ secret_key }}"    # Update with your AWS secret key
