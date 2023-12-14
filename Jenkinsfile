@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        PASS =credentials('PASS')
+        SSH =credentials('SSH')
         // PATH = "/home/ec2-user/.local/bin/ansible" // Add Ansible path
     }
     // parameters{        
