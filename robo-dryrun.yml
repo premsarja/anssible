@@ -8,6 +8,7 @@
     security_group_id: "sg-0114a25a2a35f75d8"  # Update as per your security group id
     image: "ami-0897f7643aff12c8d"             # Update this with the AMI ID in your account which has ansible installed.
     region: "us-east-1d"
+    key_pair_name: "oo.pem"  # Define the key pair name as a variable
   tasks:
     - name: Launching instance
       community.aws.ec2_instance:
@@ -15,7 +16,7 @@
          group_id: "{{ security_group_id }}"
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
-        #  key_name: "{{oo.pem}}"  # Include the key pair name here
+         key_name: "{{key_pair_name}}"  # Include the key pair name here
          wait: true
          region: "{{ region }}"
          instance_tags:
