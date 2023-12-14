@@ -10,7 +10,6 @@
     security_group_id: "sg-0114a25a2a35f75d8"  # Update as per your security group id
     image: "ami-0897f7643aff12c8d"             # Update this with the correct AMI ID
     region: "us-east-1d"
-    key_pair_name: "prem"  # Replace with your actual key pair name
   tasks:
     - name: Launching instance
       amazon.aws.ec2:
