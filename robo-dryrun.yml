@@ -7,7 +7,7 @@
     instance_type: "t3.micro"
     security_group_id: "sg-0114a25a2a35f75d8"  # Update as per your security group id
     image: "ami-0d3eb821da112abf4"             # Update this with the AMI ID in your account which has ansible installed.
-    region: "us-east-1"
+    region: "us-east-1a"
   tasks:
     - name: Launching instance
       community.aws.ec2_instance:
@@ -57,6 +57,6 @@
           community.aws.ec2_instance:
             state: 'absent'
             instance_ids: '{{ INSTANCE_ID }}'
-            region: us-east-1
+            region: us-east-1a
 
 # Ansible is not a right tool for provisioning infrastructure. Terraform is the right way to provision the infrastructure. But just consider it for understanding the test case.
