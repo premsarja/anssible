@@ -12,18 +12,17 @@
     region: "us-east-1d"
     key_pair_name: "prem"  # Replace with your actual key pair name
   tasks:
-      name: Launching instance
-      community.aws.ec2_instance:
+    - name: Launching instance
+      amazon.aws.ec2:
          count: 1
          group_id: "{{ security_group_id }}"
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
-         key_name: "{{ key_pair_name }}"  # Include the key pair name here
          wait: true
          region: "{{ region }}"
          instance_tags:
+          Name: ansible-dryrun
       register: ec2
-    # Other tasks remain the same...
 
     - name: Adding instance to the host group
       add_host:
@@ -58,9 +57,9 @@
       always:
         - name: Terminate instances that were previously launched
           delegate_to: 127.0.0.1
-          community.aws.ec2_instance:
+          amazon.aws.ec2:
             state: 'absent'
             instance_ids: '{{ INSTANCE_ID }}'
-            region: us-east-1d
+            region: us-east-1
 
 # Ansible is not a right tool for provisioning infrastructure. Terraform is the right way to provision the infrastructure. But just consider it for understanding the test case.
