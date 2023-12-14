@@ -15,7 +15,7 @@
          group_id: "{{ security_group_id }}"
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
-         key_name: "{{oo.pem}}"  # Include the key pair name here
+        #  key_name: "{{oo.pem}}"  # Include the key pair name here
          wait: true
          region: "{{ region }}"
          instance_tags:
