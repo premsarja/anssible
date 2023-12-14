@@ -1,3 +1,4 @@
+---
 # This playbook creates an instance, runs the playbook and then terminates the instance 
 # Ensure you create an AMI from a server that has ANSIBLE Installed 
 - name: Creating EC2 for DryRun
@@ -6,9 +7,9 @@
   vars:
     instance_type: "t3.micro"
     security_group_id: "sg-0114a25a2a35f75d8"  # Update as per your security group id
-    image: "ami-0897f7643aff12c8d"             # Update this with the AMI ID in your account which has ansible installed.
+    image: "ami-0897f7643aff12c8d"             # Update this with the correct AMI ID
     region: "us-east-1d"
-    key_pair_name: "yprem"  # Define the key pair name as a variable
+    key_pair_name: "prem"  # Replace with your actual key pair name
   tasks:
     - name: Launching instance
       community.aws.ec2_instance:
@@ -16,7 +17,7 @@
          group_id: "{{ security_group_id }}"
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
-         key_name: "{{ key_pair_name }}"  # Use the key pair name variable here
+         key_name: "{{ key_pair_name }}"  # Include the key pair name here
          wait: true
          region: "{{ region }}"
          instance_tags:
