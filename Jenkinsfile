@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        SSHCRED =credentials('SSHCRED')
+        PASS =credentials('PASS')
         // PATH = "/home/ec2-user/.local/bin/ansible" // Add Ansible path
     }
     // parameters{        
@@ -13,7 +13,7 @@ pipeline {
         stage('performing dryrun') {
             steps{
                 sh '''
-                ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=redis -e ansible_user=${SSH_CRED_USER} -e ansible_password=${SSH_CRED_PASSWD} 
+                ansible-playbook robo-dryrun.yml -e ENV=dev -e COMPONENT=redis -e ansible_user=${SSH_CRED_USER} -e ansible_password=${PASS} 
                 '''
             }
 
