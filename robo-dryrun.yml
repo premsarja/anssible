@@ -21,7 +21,6 @@
          wait: true
          region: "{{ region }}"
          instance_tags:
-          Name: ansible-dryrun
       register: ec2
     # Other tasks remain the same...
 
