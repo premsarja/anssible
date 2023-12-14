@@ -13,7 +13,7 @@
     key_pair_name: "prem"  # Replace with your actual key pair name
   tasks:
       name: Launching instance
-      amazon.aws.ec2:
+      community.aws.ec2_instance:
          count: 1
          group_id: "{{ security_group_id }}"
          instance_type: "{{ instance_type }}"
