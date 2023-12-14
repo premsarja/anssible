@@ -12,7 +12,7 @@
     region: "us-east-1d"
     key_pair_name: "prem"  # Replace with your actual key pair name
   tasks:
-    - name: Launching instance
+      name: Launching instance
       amazon.aws.ec2:
          count: 1
          group_id: "{{ security_group_id }}"
